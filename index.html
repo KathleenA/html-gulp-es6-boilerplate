@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<link rel="stylesheet" href="./dist/css/main.css">
+	<script src="./dist/js/require.js"></script>
+	<script>
+		require.config({
+			baseUrl: "/src/js",
+			paths: {
+				jquery: "https://code.jquery.com/jquery-3.3.1.slim.min",
+			},
+			waitSeconds: 15
+		});
+		require(["master", "cat", "dog"],
+			function(master, cat, dog) {
+				master.hello()
+				cat.say('Mauz mauz')
+				master.feed()
+			}
+		);
+	</script>
+</head>
+
+<body>
+	<div id="app">
+
+	</div>
+</body>
+
+</html>
